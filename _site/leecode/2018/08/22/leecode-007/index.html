@@ -83,7 +83,7 @@
 <link href="/assets/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Jekyll, NexT" />
+  <meta name="keywords" content="Leecode easy," />
 
 
 
@@ -111,14 +111,17 @@
 
 
 
-<meta name="keywords" content="Jekyll, NexT">
-<meta property="og:type" content="website">
-<meta property="og:title" content="JohnDoe">
-<meta property="og:url" content="http://localhost:4000/">
+<meta name="description" content="leecode-反转整数">
+<meta name="keywords" content="Leecode easy">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Leecode-007">
+<meta property="og:url" content="http://localhost:4000/leecode/2018/08/22/leecode-007/">
 <meta property="og:site_name" content="JohnDoe">
+<meta property="og:description" content="leecode-反转整数">
 <meta property="og:locale" content="en">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JohnDoe">
+<meta name="twitter:title" content="Leecode-007">
+<meta name="twitter:description" content="leecode-反转整数">
 
 
 <script type="text/javascript" id="hexo.configurations">
@@ -151,7 +154,7 @@
 
 
 
-  <title>JohnDoe</title>
+  <title>Leecode-007 | JohnDoe</title>
   
 
 
@@ -176,7 +179,7 @@
   
   
 
-  <div class="container sidebar-position-left page-home ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -266,12 +269,9 @@
           <div id="content" class="content">
             
 
-
-
-<section id="posts" class="posts-expand">
+<div id="posts" class="posts-expand">
   
-    
-    
+  
 
   
 
@@ -300,12 +300,7 @@
           <h1 class="post-title" itemprop="name headline">
           
           
-            
-                
-                <a class="post-title-link" href="/leecode/2018/08/22/leecode-007/" itemprop="url">
-                Leecode-007
-              </a>
-            
+            Leecode-007
           
         </h1>
         
@@ -366,6 +361,8 @@
           
 
           
+            
+          
 
         </div>
       </header>
@@ -378,355 +375,140 @@
 
       
         
-          leecode-反转整数
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/leecode/2018/08/22/leecode-007/">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <h1 id="题目">题目</h1>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>给定一个 32 位有符号整数，将整数中的数字进行反转。
+</code></pre></td></tr></tbody></table></div>
+</div>
+
+<h1 id="示例">示例</h1>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10</pre></td><td class="code"><pre class="highlight"><code>输入: 123
+输出: 321
+
+
+输入: -123
+输出: -321
+
+输入: 120
+输出: 21
+
+</code></pre></td></tr></tbody></table></div>
+</div>
+<h1 id="其他限制条件">其他限制条件</h1>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>假设我们的环境只能存储 32 位有符号整数，其数值范围是 [−231,  231 − 1]。根据这个假设，如果反转后的整数溢出，则返回 0。
+</code></pre></td></tr></tbody></table></div>
+</div>
+
+<h1 id="题解代码">题解代码</h1>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15</pre></td><td class="code"><pre class="highlight"><code> <span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">reverse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="s">"""
+        :type x: int
+        :rtype: int
+        """</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">))[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+        <span class="err"></span><span class="c">#先取x的绝对值将其倒置然后转换为整数</span>
+        <span class="k">if</span> <span class="o">-</span><span class="mi">2147483648</span> <span class="o">&lt;</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="mi">2147483647</span><span class="p">:</span>  <span class="c">#整数不溢出的条件</span>
+            <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="c">#如果原数字是负数为其添加负号</span>
+                <span class="n">a</span> <span class="o">=</span> <span class="o">-</span><span class="n">a</span>
+            <span class="k">return</span> <span class="n">a</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span> 
+</code></pre></td></tr></tbody></table></div>
+</div>
+<h1 id="解题思路">解题思路</h1>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>这个题操作是将数字反转，我们很自然想到可以使用[::-1]的方法获得反转的字符串，然后转化为int类型可以去掉前导零，如果使用字符串操作可以使用rstrip('0')去掉左边的‘0’字符
+</code></pre></td></tr></tbody></table></div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
     <div>
+      
+        
+
       
     </div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-        
-        
-        
-        
-          <div class="post-eof"></div>
-        
-      
-    </footer>
-  </article>
-
-  
-    
-    
-
-  
-
-  
-  
-  
-
-  <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://localhost:4000/leecode/2018/08/22/leecode-002/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="assets/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JohnDoe">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-          
+        <div class="post-tags">
           
             
-                
-                <a class="post-title-link" href="/leecode/2018/08/22/leecode-002/" itemprop="url">
-                Leecode-002
+            <a href="/tag/#/Leecode%20easy" rel="tag"># Leecode easy</a>
+          
+        </div>
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+        <div class="post-nav" id="post-nav-id">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/leecode/2018/08/22/leecode-002/" rel="prev" title="Leecode-002">
+                Leecode-002 <i class="fa fa-chevron-right"></i>
               </a>
             
-          
-        </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-22T00:00:00+08:00">
-                2018-08-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/category/#/Leecode" itemprop="url" rel="index">
-                    <span itemprop="name">Leecode</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          leecode-删除排序数组中的重复项
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/leecode/2018/08/22/leecode-002/">
-              Read more &raquo;
-            </a>
           </div>
-          <!--/noindex-->
-        
+        </div>
       
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
       
 
-      
-
-      
-
-      
-        
-        
-        
-        
-          <div class="post-eof"></div>
-        
       
     </footer>
   </article>
 
-  
+  <div class="post-spread">
     
-    
-
-  
-
-  
-  
-  
-
-  <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://localhost:4000/leecode/2018/08/22/leecode-001/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="assets/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JohnDoe">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-                
-                <a class="post-title-link" href="/leecode/2018/08/22/leecode-001/" itemprop="url">
-                Leecode-001
-              </a>
-            
-          
-        </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-22T00:00:00+08:00">
-                2018-08-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/category/#/Leecode" itemprop="url" rel="index">
-                    <span itemprop="name">Leecode</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          leecode-两数之和
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/leecode/2018/08/22/leecode-001/">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-        
-        
-        
-        
-          <div class="post-eof"></div>
-        
-      
-    </footer>
-  </article>
-
-  
-</section>
-
-
-
+  </div>
+</div>
 
 
           </div>
@@ -734,6 +516,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -751,10 +537,30 @@
     <div class="sidebar-inner">
 
       
+        
+        
+        
+
+
+
+
+
+
 
       
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/assets/images/avatar.gif"
@@ -825,6 +631,34 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+
+
+
+
+
+
+
+            
+              <div class="post-toc-content">
+    <ol class=nav>
+      <li class="nav-item nav-level-1"> <a class="nav-link" href="#题目"> <span class="nav-number">1</span> <span class="nav-text">题目</span> </a> </li> <li class="nav-item nav-level-1"> <a class="nav-link" href="#示例"> <span class="nav-number">2</span> <span class="nav-text">示例</span> </a> </li> <li class="nav-item nav-level-1"> <a class="nav-link" href="#其他限制条件"> <span class="nav-number">3</span> <span class="nav-text">其他限制条件</span> </a> </li> <li class="nav-item nav-level-1"> <a class="nav-link" href="#题解代码"> <span class="nav-number">4</span> <span class="nav-text">题解代码</span> </a> </li> <li class="nav-item nav-level-1"> <a class="nav-link" href="#解题思路"> <span class="nav-number">5</span> <span class="nav-text">解题思路</span> </a> </li>
+    </ol>
+  </div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
