@@ -83,7 +83,7 @@
 <link href="/assets/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Jekyll, NexT" />
+  <meta name="keywords" content="Leecode easy," />
 
 
 
@@ -111,14 +111,17 @@
 
 
 
-<meta name="keywords" content="Jekyll, NexT">
-<meta property="og:type" content="website">
-<meta property="og:title" content="JohnDoe">
-<meta property="og:url" content="http://localhost:4000/archives/">
+<meta name="description" content="leecode-两数之和">
+<meta name="keywords" content="Leecode easy">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Leecode-001">
+<meta property="og:url" content="http://localhost:4000/leecode/2018/08/22/leecode-001/">
 <meta property="og:site_name" content="JohnDoe">
+<meta property="og:description" content="leecode-两数之和">
 <meta property="og:locale" content="en">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JohnDoe">
+<meta name="twitter:title" content="Leecode-001">
+<meta name="twitter:description" content="leecode-两数之和">
 
 
 <script type="text/javascript" id="hexo.configurations">
@@ -151,7 +154,7 @@
 
 
 
-  <title>Archives | JohnDoe</title>
+  <title>Leecode-001 | JohnDoe</title>
   
 
 
@@ -176,7 +179,7 @@
   
   
 
-  <div class="container sidebar-position-left page-archive ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -265,66 +268,216 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-<section id="posts" class="posts-collapse" hidden>
-  <span class="archive-move-on"></span>
 
-  <span class="archive-page-counter">
-    
-    
-    Um..!
-    
-      1 post.
-    
-    Keep on posting.
-  </span>
-
+<div id="posts" class="posts-expand">
   
   
 
   
-    
+
+  
+  
+  
+
+  <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/leecode/2018/08/22/leecode-001/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="assets/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JohnDoe">
+    </span>
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+          
+          
+            Leecode-001
+          
+        </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-22T00:00:00+08:00">
+                2018-08-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/category/#/Leecode" itemprop="url" rel="index">
+                    <span itemprop="name">Leecode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+            
+          
+
+        </div>
+      </header>
     
-    
+
+    <div class="post-body" itemprop="articleBody">
+
       
-      <div class="collection-title" route="/">
-        <h2 class="archive-year motion-element" id="archive-year-2018">2018</h2>
-      </div>
-    
-    
+      
 
-    
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article" route="/">
-    <header class="post-header">
-
-      <h2 class="post-title">
+      
         
-            <a class="post-title-link" href="/leecode/2018/08/22/leecode-001/" itemprop="url">
-              
-                <span itemprop="name">Leecode-001</span>
-              
-            </a>
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <h1 id="题目">题目</h1>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3</pre></td><td class="code"><pre class="highlight"><code>给定一个整数数组和一个目标值，找出数组中和为目标值的两个数。
+
+你可以假设每个输入只对应一种答案，且同样的元素不能被重复利用。
+</code></pre></td></tr></tbody></table></div>
+</div>
+
+<h1 id="示例">示例</h1>
+
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4</pre></td><td class="code"><pre class="highlight"><code>给定 nums = [2, 7, 11, 15], target = 9
+
+因为 nums[0] + nums[1] = 2 + 7 = 9
+所以返回 [0, 1]
+</code></pre></td></tr></tbody></table></div>
+</div>
+
+<h1 id="题解代码">题解代码</h1>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9</pre></td><td class="code"><pre class="highlight"><code> <span class="k">def</span> <span class="nf">twoSum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">,</span> <span class="n">target</span><span class="p">):</span>
+        <span class="s">"""
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """</span>
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">target</span> <span class="o">-</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">[</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:]:</span>
+                <span class="k">return</span> <span class="p">[</span><span class="n">k</span><span class="p">,</span> <span class="n">nums</span><span class="p">[</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:]</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">target</span> <span class="o">-</span> <span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+</code></pre></td></tr></tbody></table></div>
+</div>
+
+<p>#解题思路总结</p>
+<div class="highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>简单使用循环实现遇到和为target直接返回
+</code></pre></td></tr></tbody></table></div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
         
-      </h2>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-22T00:00:00+08:00"
-              content="2018-08-22" >
-          08-22
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            
+            <a href="/tag/#/Leecode%20easy" rel="tag"># Leecode easy</a>
+          
+        </div>
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+      
+
+      
+    </footer>
   </article>
 
-
-  
-
-</section>
-
-<nav class="pagination"></nav>
+  <div class="post-spread">
+    
+  </div>
+</div>
 
 
           </div>
@@ -332,6 +485,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -349,10 +506,30 @@
     <div class="sidebar-inner">
 
       
+        
+        
+        
+
+
+
+
+
+
 
       
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/assets/images/avatar.gif"
@@ -423,6 +600,34 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+
+
+
+
+
+
+
+            
+              <div class="post-toc-content">
+    <ol class=nav>
+      <li class="nav-item nav-level-1"> <a class="nav-link" href="#题目"> <span class="nav-number">1</span> <span class="nav-text">题目</span> </a> </li> <li class="nav-item nav-level-1"> <a class="nav-link" href="#示例"> <span class="nav-number">2</span> <span class="nav-text">示例</span> </a> </li> <li class="nav-item nav-level-1"> <a class="nav-link" href="#题解代码"> <span class="nav-number">3</span> <span class="nav-text">题解代码</span> </a> </li>
+    </ol>
+  </div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -560,82 +765,9 @@
   
   
 
-  
-    
-      <script type="text/javascript" id="motion.page.archive">
-        $('.archive-year').velocity('transition.slideLeftIn');
-      </script>
-    
-    
+  <script type="text/javascript" src="/assets/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/assets/js/src/post-details.js?v=5.1.1"></script>
 
-
-
-  <script type="text/javascript" src="/assets/js/src/paginator.js"></script>
-  <script>
-    (function() {
-      // Url route
-      var hash = window.location.hash.substring(1);
-      $(window).on('hashchange', function() {
-        location.reload();
-        $(this).scrollTop(0);
-      });
-
-      if (!hash)
-        hash = "/";
-      $('[route][route!="' + hash + '"]').remove();
-      $('#posts').show();
-
-      // Pagination
-      
-
-      
-
-      
-        var sizes = 1
-        var base = "#";
-      
-
-      var current = 0;
-
-      if (hash != '/') {
-        
-
-        var reg = /(?:\/page(\d+))/;
-        var res = reg.exec(hash);
-
-        if (res && res[1])
-          current = parseInt(res[1]);
-      }
-      else {
-        current = 1;
-      }
-
-      var total = Math.floor(sizes / 10);
-      if (sizes % 10 > 0) {
-        total = total + 1;
-      }
-
-      if (total <= 1) {
-        $('nav.pagination').remove();
-      }
-      else {
-        var content = paginator({
-                          prev_text: '<i class="fa fa-angle-left"></i>',
-                          next_text: '<i class="fa fa-angle-right"></i>',
-                          current: current,
-                          total: total,
-                          base: base,
-                          format: "/page%d",
-                          mid_size: 1,
-                          end_size: 1
-                        });
-          $('nav.pagination').html(content);
-      }
-    })();
-  </script>
-
-
-  
 
   
 
