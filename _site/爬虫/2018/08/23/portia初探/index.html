@@ -83,7 +83,7 @@
 <link href="/assets/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Jekyll, NexT" />
+  <meta name="keywords" content="数据收集," />
 
 
 
@@ -111,17 +111,17 @@
 
 
 
-<meta name="description" content="官方文档 这是portia的官方文档地址 https://portia.readthedocs.io/en/latest/ 第一步安装docker（推荐安装方式） Ubuntu： sudo apt-get install docker.io pip install docker-compose （速度过慢可以使用阿里的加速器） MAC： docker官网下载对应dmg包安装即可 下载启动portia镜像并启动 docker run -i -t --rm -v /Users/&amp;lt;username&amp;gt;/Projects/portia_projects:/app/data/projects:rw -p 9001:9001 scrapinghub/portia 此时访问127.0.0.1:9001即可打开portia 后续 目前使用也是仅仅将环境部署并做简单尝试，后续高级功能会再做介绍。">
-<meta name="keywords" content="Jekyll, NexT">
+<meta name="description" content="Portia初探可视化爬虫环境搭建">
+<meta name="keywords" content="数据收集">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JohnDoe">
-<meta property="og:url" content="http://localhost:4000/2018/08/23/2018-08-23-portia%E5%88%9D%E6%8E%A2/">
+<meta property="og:title" content="Portia初探">
+<meta property="og:url" content="http://localhost:4000/%E7%88%AC%E8%99%AB/2018/08/23/portia%E5%88%9D%E6%8E%A2/">
 <meta property="og:site_name" content="JohnDoe">
-<meta property="og:description" content="官方文档 这是portia的官方文档地址 https://portia.readthedocs.io/en/latest/ 第一步安装docker（推荐安装方式） Ubuntu： sudo apt-get install docker.io pip install docker-compose （速度过慢可以使用阿里的加速器） MAC： docker官网下载对应dmg包安装即可 下载启动portia镜像并启动 docker run -i -t --rm -v /Users/&amp;lt;username&amp;gt;/Projects/portia_projects:/app/data/projects:rw -p 9001:9001 scrapinghub/portia 此时访问127.0.0.1:9001即可打开portia 后续 目前使用也是仅仅将环境部署并做简单尝试，后续高级功能会再做介绍。">
+<meta property="og:description" content="Portia初探可视化爬虫环境搭建">
 <meta property="og:locale" content="en">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JohnDoe">
-<meta name="twitter:description" content="官方文档 这是portia的官方文档地址 https://portia.readthedocs.io/en/latest/ 第一步安装docker（推荐安装方式） Ubuntu： sudo apt-get install docker.io pip install docker-compose （速度过慢可以使用阿里的加速器） MAC： docker官网下载对应dmg包安装即可 下载启动portia镜像并启动 docker run -i -t --rm -v /Users/&amp;lt;username&amp;gt;/Projects/portia_projects:/app/data/projects:rw -p 9001:9001 scrapinghub/portia 此时访问127.0.0.1:9001即可打开portia 后续 目前使用也是仅仅将环境部署并做简单尝试，后续高级功能会再做介绍。">
+<meta name="twitter:title" content="Portia初探">
+<meta name="twitter:description" content="Portia初探可视化爬虫环境搭建">
 
 
 <script type="text/javascript" id="hexo.configurations">
@@ -154,7 +154,7 @@
 
 
 
-  <title> | JohnDoe</title>
+  <title>Portia初探 | JohnDoe</title>
   
 
 
@@ -280,7 +280,7 @@
   
 
   <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://localhost:4000/2018/08/23/2018-08-23-portia%E5%88%9D%E6%8E%A2/">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/%E7%88%AC%E8%99%AB/2018/08/23/portia%E5%88%9D%E6%8E%A2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -300,7 +300,7 @@
           <h1 class="post-title" itemprop="name headline">
           
           
-            
+            Portia初探
           
         </h1>
         
@@ -314,7 +314,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-23T14:02:27+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-23T00:00:00+08:00">
                 2018-08-23
               </time>
             
@@ -324,6 +324,29 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/category/#/%E7%88%AC%E8%99%AB" itemprop="url" rel="index">
+                    <span itemprop="name">爬虫</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -423,6 +446,13 @@ MAC：
     </div>
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            
+            <a href="/tag/#/%E6%95%B0%E6%8D%AE%E6%94%B6%E9%9B%86" rel="tag"># 数据收集</a>
+          
+        </div>
       
 
       
@@ -536,7 +566,7 @@ MAC：
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">categories</span>
               </a>
             </div>
@@ -547,7 +577,7 @@ MAC：
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
