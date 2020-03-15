@@ -111,17 +111,17 @@
 
 
 
-<meta name="description" content="leecode-删除排序数组中的重复项">
+<meta name="description" content="leecode-罗马数字转整数">
 <meta name="keywords" content="Leecode easy">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Leecode-002">
-<meta property="og:url" content="http://localhost:4000/leecode/2018/08/22/leecode-002/">
+<meta property="og:title" content="Leecode-013">
+<meta property="og:url" content="http://localhost:4000/leecode/2020/03/10/leecode-013/">
 <meta property="og:site_name" content="pycircus">
-<meta property="og:description" content="leecode-删除排序数组中的重复项">
+<meta property="og:description" content="leecode-罗马数字转整数">
 <meta property="og:locale" content="en">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Leecode-002">
-<meta name="twitter:description" content="leecode-删除排序数组中的重复项">
+<meta name="twitter:title" content="Leecode-013">
+<meta name="twitter:description" content="leecode-罗马数字转整数">
 
 
 <script type="text/javascript" id="hexo.configurations">
@@ -154,7 +154,7 @@
 
 
 
-  <title>Leecode-002 | pycircus</title>
+  <title>Leecode-013 | pycircus</title>
   
 
 
@@ -280,7 +280,7 @@
   
 
   <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://localhost:4000/leecode/2018/08/22/leecode-002/">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/leecode/2020/03/10/leecode-013/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="pycircus">
@@ -300,7 +300,7 @@
           <h1 class="post-title" itemprop="name headline">
           
           
-            Leecode-002
+            Leecode-013
           
         </h1>
         
@@ -314,8 +314,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-22T00:00:00+08:00">
-                2018-08-22
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-03-10T00:00:00+08:00">
+                2020-03-10
               </time>
             
 
@@ -391,47 +391,66 @@
 
   <h1 id="题目">题目</h1>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3</pre></td><td class="code"><pre class="highlight"><code>给定一个排序数组，你需要在原地删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20</pre></td><td class="code"><pre class="highlight"><code>罗马数字包含以下七种字符: I， V， X， L，C，D 和 M。
 
-不要使用额外的数组空间，你必须在原地修改输入数组并在使用 O(1) 额外空间的条件下完成。
+字符          数值
+I             1
+V             5
+X             10
+L             50
+C             100
+D             500
+M             1000
+
+例如， 罗马数字 2 写做 II ，即为两个并列的 1。12 写做 XII ，即为 X + II 。 27 写做  XXVII, 即为 XX + V + II 。
+
+通常情况下，罗马数字中小的数字在大的数字的右边。但也存在特例，例如 4 不写做 IIII，而是 IV。数字 1 在数字 5 的左边，所表示的数等于大数 5 减小数 1 得到的数值 4 。同样地，数字 9 表示为 IX。这个特殊的规则只适用于以下六种情况：
+
+I 可以放在 V (5) 和 X (10) 的左边，来表示 4 和 9。
+X 可以放在 L (50) 和 C (100) 的左边，来表示 40 和 90。 
+C 可以放在 D (500) 和 M (1000) 的左边，来表示 400 和 900。
+给定一个罗马数字，将其转换成整数。输入确保在 1 到 3999 的范围内。
+
 </code></pre></td></tr></tbody></table></div></div>
 
 <h1 id="示例">示例</h1>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12</pre></td><td class="code"><pre class="highlight"><code>给定数组 nums = [1,1,2], 
-
-函数应该返回新的长度 2, 并且原数组 nums 的前两个元素被修改为 1, 2。 
-
-你不需要考虑数组中超出新长度后面的元素。
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18</pre></td><td class="code"><pre class="highlight"><code>输入: "III"
+输出: 3
 
 
-给定 nums = [0,0,1,1,1,2,2,3,3,4],
+输入: "IV"
+输出: 4
 
-函数应该返回新的长度 5, 并且原数组 nums 的前五个元素被修改为 0, 1, 2, 3, 4。
+输入: "IX"
+输出: 9
 
-你不需要考虑数组中超出新长度后面的元素。
+输入: "LVIII"
+输出: 58
+解释: L = 50, V= 5, III = 3.
+
+输入: "MCMXCIV"
+输出: 1994
+解释: M = 1000, CM = 900, XC = 90, IV = 4.
+
+</code></pre></td></tr></tbody></table></div></div>
+<h1 id="其他限制条件">其他限制条件</h1>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>无
 </code></pre></td></tr></tbody></table></div></div>
 
-<h1 id="题解代码">题解代码</h1>
+<h1 id="解题">解题</h1>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14</pre></td><td class="code"><pre class="highlight"><code> <span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">removeDuplicates</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">):</span>
-        <span class="s">"""
-        :type nums: List[int]
-        :rtype: int
-        """</span>
-        <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]:</span>
-                <span class="n">nums</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-                <span class="err">遇到重复就把重复的元素删除掉</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
-        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
-</code></pre></td></tr></tbody></table></div></div>
-<h1 id="解题思路">解题思路</h1>
+<h3 id="两位优先一位-直接列个字典">两位优先一位 直接列个字典</h3>
+<h3 id="此算法取自题解-思路很巧妙-注意长度为2的子串记录的值是实际值---子串内左边罗马数字代表的数值">此算法取自题解 思路很巧妙 注意长度为2的子串记录的值是（实际值 - 子串内左边罗马数字代表的数值）</h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>这个函数在使用的时候传递的是引用值，即为函数操作之后传入变量的值也会发生改变，即在原有列表上操作（原地去重）。
+<div class="language-python highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7</pre></td><td class="code"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">isPalindrome</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s">'I'</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s">'IV'</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="s">'V'</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span> <span class="s">'IX'</span><span class="p">:</span><span class="mi">8</span><span class="p">,</span> <span class="s">'X'</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span> <span class="s">'XL'</span><span class="p">:</span><span class="mi">30</span><span class="p">,</span> <span class="s">'L'</span><span class="p">:</span><span class="mi">50</span><span class="p">,</span> <span class="s">'XC'</span><span class="p">:</span><span class="mi">80</span><span class="p">,</span> <span class="s">'C'</span><span class="p">:</span><span class="mi">100</span><span class="p">,</span> <span class="s">'CD'</span><span class="p">:</span><span class="mi">300</span><span class="p">,</span> <span class="s">'D'</span><span class="p">:</span><span class="mi">500</span><span class="p">,</span> <span class="s">'CM'</span><span class="p">:</span><span class="mi">800</span><span class="p">,</span> <span class="s">'M'</span><span class="p">:</span><span class="mi">1000</span><span class="p">}</span>
+    <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+        <span class="nb">sum</span> <span class="o">+=</span> <span class="n">d</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="nb">max</span><span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span> <span class="n">d</span><span class="p">[</span><span class="n">n</span><span class="p">])</span>
+    <span class="k">return</span> <span class="nb">sum</span>
 </code></pre></td></tr></tbody></table></div></div>
 
 
@@ -480,8 +499,8 @@
         <div class="post-nav" id="post-nav-id">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/leecode/2018/08/22/leecode-007/" rel="next" title="Leecode-007">
-                <i class="fa fa-chevron-left"></i> Leecode-007
+              <a href="/leecode/2020/03/10/leecode=009/" rel="next" title="Leecode-009">
+                <i class="fa fa-chevron-left"></i> Leecode-009
               </a>
             
           </div>
@@ -490,8 +509,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/leecode/2018/08/22/leecode-001/" rel="prev" title="Leecode-001">
-                Leecode-001 <i class="fa fa-chevron-right"></i>
+              <a href="/%E7%88%AC%E8%99%AB/2018/08/23/portia%E5%88%9D%E6%8E%A2/" rel="prev" title="Portia初探">
+                Portia初探 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -649,7 +668,7 @@
             
               <div class="post-toc-content">
     <ol class=nav>
-      <li class="nav-item nav-level-1"> <a class="nav-link" href="#题目"> <span class="nav-number">1</span> <span class="nav-text">题目</span> </a> </li> <li class="nav-item nav-level-1"> <a class="nav-link" href="#示例"> <span class="nav-number">2</span> <span class="nav-text">示例</span> </a> </li> <li class="nav-item nav-level-1"> <a class="nav-link" href="#题解代码"> <span class="nav-number">3</span> <span class="nav-text">题解代码</span> </a> </li> <li class="nav-item nav-level-1"> <a class="nav-link" href="#解题思路"> <span class="nav-number">4</span> <span class="nav-text">解题思路</span> </a> </li>
+      <li class="nav-item nav-level-1"> <a class="nav-link" href="#题目"> <span class="nav-number">1</span> <span class="nav-text">题目</span> </a> </li> <li class="nav-item nav-level-1"> <a class="nav-link" href="#示例"> <span class="nav-number">2</span> <span class="nav-text">示例</span> </a> </li> <li class="nav-item nav-level-1"> <a class="nav-link" href="#其他限制条件"> <span class="nav-number">3</span> <span class="nav-text">其他限制条件</span> </a> </li> <li class="nav-item nav-level-1"> <a class="nav-link" href="#解题"> <span class="nav-number">4</span> <span class="nav-text">解题</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-3"> <a class="nav-link" href="#两位优先一位-直接列个字典"> <span class="nav-number">4.1</span> <span class="nav-text">两位优先一位 直接列个字典</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#此算法取自题解-思路很巧妙-注意长度为2的子串记录的值是实际值---子串内左边罗马数字代表的数值"> <span class="nav-number">4.2</span> <span class="nav-text">此算法取自题解 思路很巧妙 注意长度为2的子串记录的值是（实际值 - 子串内左边罗马数字代表的数值）</span> </a> </li> </ol> </li>
     </ol>
   </div>
             

@@ -111,17 +111,17 @@
 
 
 
-<meta name="description" content="leecode-删除排序数组中的重复项">
+<meta name="description" content="leecode-回文数">
 <meta name="keywords" content="Leecode easy">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Leecode-002">
-<meta property="og:url" content="http://localhost:4000/leecode/2018/08/22/leecode-002/">
+<meta property="og:title" content="Leecode-009">
+<meta property="og:url" content="http://localhost:4000/leecode/2020/03/10/leecode=009/">
 <meta property="og:site_name" content="pycircus">
-<meta property="og:description" content="leecode-删除排序数组中的重复项">
+<meta property="og:description" content="leecode-回文数">
 <meta property="og:locale" content="en">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Leecode-002">
-<meta name="twitter:description" content="leecode-删除排序数组中的重复项">
+<meta name="twitter:title" content="Leecode-009">
+<meta name="twitter:description" content="leecode-回文数">
 
 
 <script type="text/javascript" id="hexo.configurations">
@@ -154,7 +154,7 @@
 
 
 
-  <title>Leecode-002 | pycircus</title>
+  <title>Leecode-009 | pycircus</title>
   
 
 
@@ -280,7 +280,7 @@
   
 
   <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://localhost:4000/leecode/2018/08/22/leecode-002/">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/leecode/2020/03/10/leecode=009/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="pycircus">
@@ -300,7 +300,7 @@
           <h1 class="post-title" itemprop="name headline">
           
           
-            Leecode-002
+            Leecode-009
           
         </h1>
         
@@ -314,8 +314,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-22T00:00:00+08:00">
-                2018-08-22
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-03-10T00:00:00+08:00">
+                2020-03-10
               </time>
             
 
@@ -391,48 +391,61 @@
 
   <h1 id="题目">题目</h1>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3</pre></td><td class="code"><pre class="highlight"><code>给定一个排序数组，你需要在原地删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。
-
-不要使用额外的数组空间，你必须在原地修改输入数组并在使用 O(1) 额外空间的条件下完成。
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2</pre></td><td class="code"><pre class="highlight"><code>判断一个整数是否是回文数。
+回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。
 </code></pre></td></tr></tbody></table></div></div>
 
 <h1 id="示例">示例</h1>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12</pre></td><td class="code"><pre class="highlight"><code>给定数组 nums = [1,1,2], 
-
-函数应该返回新的长度 2, 并且原数组 nums 的前两个元素被修改为 1, 2。 
-
-你不需要考虑数组中超出新长度后面的元素。
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12</pre></td><td class="code"><pre class="highlight"><code>输入: 121
+输出: true
 
 
-给定 nums = [0,0,1,1,1,2,2,3,3,4],
+输入: -121
+输出: false
+解释: 从左向右读, 为 -121 。 从右向左读, 为 121- 。因此它不是一个回文数。
 
-函数应该返回新的长度 5, 并且原数组 nums 的前五个元素被修改为 0, 1, 2, 3, 4。
+输入: 10
+输出: false
+解释: 从右向左读, 为 01 。因此它不是一个回文数。
 
-你不需要考虑数组中超出新长度后面的元素。
+</code></pre></td></tr></tbody></table></div></div>
+<h1 id="其他限制条件">其他限制条件</h1>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3</pre></td><td class="code"><pre class="highlight"><code>进阶:
+
+你能不将整数转为字符串来解决这个问题吗？
 </code></pre></td></tr></tbody></table></div></div>
 
-<h1 id="题解代码">题解代码</h1>
+<h1 id="解题">解题</h1>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14</pre></td><td class="code"><pre class="highlight"><code> <span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">removeDuplicates</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">):</span>
-        <span class="s">"""
-        :type nums: List[int]
-        :rtype: int
-        """</span>
-        <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]:</span>
-                <span class="n">nums</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-                <span class="err">遇到重复就把重复的元素删除掉</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
-        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
-</code></pre></td></tr></tbody></table></div></div>
-<h1 id="解题思路">解题思路</h1>
+<h3 id="先用字符串处理一下">先用字符串处理一下</h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>这个函数在使用的时候传递的是引用值，即为函数操作之后传入变量的值也会发生改变，即在原有列表上操作（原地去重）。
+<div class="language-python highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7</pre></td><td class="code"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">isPalindrome</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">False</span>
 </code></pre></td></tr></tbody></table></div></div>
+
+<h3 id="进阶要求不适用字符串-考虑使用数字解决问题">进阶要求不适用字符串 考虑使用数字解决问题</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11</pre></td><td class="code"><pre class="highlight"><code><span class="k">def</span> <span class="nf">isPalindrome</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="p">(</span><span class="n">x</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">False</span>
+    <span class="n">revertedNumber</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">revertedNumber</span><span class="p">:</span>
+        <span class="n">revertedNumber</span> <span class="o">=</span> <span class="n">revertedNumber</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">10</span>
+        <span class="n">x</span> <span class="o">//=</span> <span class="mi">10</span>
+    <span class="k">if</span> <span class="n">revertedNumber</span> <span class="o">==</span> <span class="n">x</span> <span class="ow">or</span> <span class="n">revertedNumber</span> <span class="o">//</span> <span class="mi">10</span> <span class="o">==</span> <span class="n">x</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">False</span>
+</code></pre></td></tr></tbody></table></div></div>
+
+<h3 id="注意python3使用为整除">注意python3使用//为整除</h3>
 
 
       
@@ -480,8 +493,8 @@
         <div class="post-nav" id="post-nav-id">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/leecode/2018/08/22/leecode-007/" rel="next" title="Leecode-007">
-                <i class="fa fa-chevron-left"></i> Leecode-007
+              <a href="/python%E5%B0%8F%E6%8A%80%E5%B7%A7/2020/03/15/python%E8%A7%A3%E5%8C%85/" rel="next" title="python-解包完全攻略">
+                <i class="fa fa-chevron-left"></i> python-解包完全攻略
               </a>
             
           </div>
@@ -490,8 +503,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/leecode/2018/08/22/leecode-001/" rel="prev" title="Leecode-001">
-                Leecode-001 <i class="fa fa-chevron-right"></i>
+              <a href="/leecode/2020/03/10/leecode-013/" rel="prev" title="Leecode-013">
+                Leecode-013 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -649,7 +662,7 @@
             
               <div class="post-toc-content">
     <ol class=nav>
-      <li class="nav-item nav-level-1"> <a class="nav-link" href="#题目"> <span class="nav-number">1</span> <span class="nav-text">题目</span> </a> </li> <li class="nav-item nav-level-1"> <a class="nav-link" href="#示例"> <span class="nav-number">2</span> <span class="nav-text">示例</span> </a> </li> <li class="nav-item nav-level-1"> <a class="nav-link" href="#题解代码"> <span class="nav-number">3</span> <span class="nav-text">题解代码</span> </a> </li> <li class="nav-item nav-level-1"> <a class="nav-link" href="#解题思路"> <span class="nav-number">4</span> <span class="nav-text">解题思路</span> </a> </li>
+      <li class="nav-item nav-level-1"> <a class="nav-link" href="#题目"> <span class="nav-number">1</span> <span class="nav-text">题目</span> </a> </li> <li class="nav-item nav-level-1"> <a class="nav-link" href="#示例"> <span class="nav-number">2</span> <span class="nav-text">示例</span> </a> </li> <li class="nav-item nav-level-1"> <a class="nav-link" href="#其他限制条件"> <span class="nav-number">3</span> <span class="nav-text">其他限制条件</span> </a> </li> <li class="nav-item nav-level-1"> <a class="nav-link" href="#解题"> <span class="nav-number">4</span> <span class="nav-text">解题</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-3"> <a class="nav-link" href="#先用字符串处理一下"> <span class="nav-number">4.1</span> <span class="nav-text">先用字符串处理一下</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#进阶要求不适用字符串-考虑使用数字解决问题"> <span class="nav-number">4.2</span> <span class="nav-text">进阶要求不适用字符串 考虑使用数字解决问题</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#注意python3使用为整除"> <span class="nav-number">4.3</span> <span class="nav-text">注意python3使用//为整除</span> </a> </li> </ol> </li>
     </ol>
   </div>
             

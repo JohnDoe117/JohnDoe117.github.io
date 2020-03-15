@@ -89,7 +89,7 @@
 
 
 
-  <link rel="alternate" href="/atom.xml" title="JohnDoe" type="application/atom+xml" />
+  <link rel="alternate" href="/atom.xml" title="pycircus" type="application/atom+xml" />
 
 
 
@@ -116,7 +116,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="MathJax with Jekyll">
 <meta property="og:url" content="http://localhost:4000/%E5%8D%9A%E6%96%87%E7%A4%BA%E4%BE%8B%E6%96%87%E4%BB%B6/2014-02-16-Mathjax-with-jekyll/">
-<meta property="og:site_name" content="JohnDoe">
+<meta property="og:site_name" content="pycircus">
 <meta property="og:description" content="One of the rewards of switching my website to [Jekyll](http://jekyllrb.com/) is the ability to support **MathJax**, which means I can write LaTeX-like equations that get nicely displayed in a web browser, like this one \\( \sqrt{\frac{n!}{k!(n-k)!}} \\) or this one \\( x^2 + y^2 = r^2 \\). ### What&apos;s MathJax? If you check MathJax website [(www.mathjax.org)](http://www.mathjax.org/) you&apos;ll see that it *is an open source JavaScript display engine for mathematics that works in all browsers*. ### How to implement MathJax with Jekyll I followed the instructions described by Dason Kurkiewicz for [using Jekyll and Mathjax](http://dasonk.github.io/blog/2012/10/09/Using-Jekyll-and-Mathjax/). Here are some important details. I had to modify the Ruby library for Markdown in my ```_config.yml``` file. Now I&apos;m using redcarpet so the corresponding line in the configuration file is: ```markdown: redcarpet``` To load the MathJax javascript, I added the following lines in my layout ```page.html``` (located in my folder ```_layouts```) {% highlight r %} {% endhighlight %} Of course you can choose a different file location in your jekyll layouts. ### A Couple of Examples Here&apos;s a short list of examples. To know more about the details behind MathJax, you can always checked the provided documentation available at [http://docs.mathjax.org/en/latest/](http://docs.mathjax.org/en/latest/) I&apos;m assuming you are familiar with LaTeX. However, you should know that MathJax does not have the exactly same behavior as LaTeX. By default, the **tex2jax** preprocessor defines the LaTeX math delimiters, which are ```\\(...\\)``` for in-line math, and ```\\[...\\]``` for displayed equations. It also defines the TeX delimiters ```$$...$$``` for displayed equations, but it does not define ```$...$``` as in-line math delimiters. Fortunately, you can change these predefined specifications if you want to do so. Let&apos;s try a first example. Here&apos;s a dummy equation: $$a^2 + b^2 = c^2$$ How do you write such expression? Very simple: using **double dollar** signs {% highlight r %} $$a^2 + b^2 = c^2$$ {% endhighlight %} To display inline math use ```\\( ... \\)``` like this ```\\( sin(x^2) \\)``` which gets rendered as \\( sin(x^2) \\) Here&apos;s another example using type ```\mathsf``` {% highlight r %} $$ \mathsf{Data = PCs} \times \mathsf{Loadings} $$ {% endhighlight %} which gets displayed as $$ \mathsf{Data = PCs} \times \mathsf{Loadings} $$ Or even better: {% highlight r %} \\[ \mathbf{X} = \mathbf{Z} \mathbf{P^\mathsf{T}} \\] {% endhighlight %} is displayed as \\[ \mathbf{X} = \mathbf{Z} \mathbf{P^\mathsf{T}} \\] If you want to use subscripts like this \\( \mathbf{X}\_{n,p} \\) you need to scape the underscores with a backslash like so ``` \mathbf{X}\_{n,p} ```: {% highlight r %} $$ \mathbf{X}\_{n,p} = \mathbf{A}\_{n,k} \mathbf{B}\_{k,p} $$ {% endhighlight %} will be displayed as \\[ \mathbf{X}\_{n,p} = \mathbf{A}\_{n,k} \mathbf{B}\_{k,p} \\]">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="centered">
@@ -156,7 +156,7 @@
 
 
 
-  <title>MathJax with Jekyll | JohnDoe</title>
+  <title>MathJax with Jekyll | pycircus</title>
   
 
 
@@ -192,7 +192,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">JohnDoe</span>
+        <span class="site-title">pycircus</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -285,13 +285,13 @@
     <link itemprop="mainEntityOfPage" href="http://localhost:4000/%E5%8D%9A%E6%96%87%E7%A4%BA%E4%BE%8B%E6%96%87%E4%BB%B6/2014-02-16-Mathjax-with-jekyll/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
+      <meta itemprop="name" content="pycircus">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="assets/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JohnDoe">
+      <meta itemprop="name" content="pycircus">
     </span>
 
     
@@ -584,8 +584,8 @@ will be displayed as
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/assets/images/avatar.gif"
-               alt="John Doe" />
-          <p class="site-author-name" itemprop="name">John Doe</p>
+               alt="pycircus" />
+          <p class="site-author-name" itemprop="name">pycircus</p>
            
               <p class="site-description motion-element" itemprop="description"></p>
           
@@ -595,7 +595,7 @@ will be displayed as
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -606,7 +606,7 @@ will be displayed as
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">categories</span>
               </a>
             </div>
@@ -617,7 +617,7 @@ will be displayed as
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -672,7 +672,7 @@ will be displayed as
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
+  <span class="author" itemprop="copyrightHolder">pycircus</span>
 </div>
 
 
