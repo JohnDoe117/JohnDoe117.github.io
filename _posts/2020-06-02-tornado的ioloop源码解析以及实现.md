@@ -261,7 +261,7 @@ class IOLoop(object):
         # 设置不阻塞
         fcntl.fcntl(fd, fcntl.F_SETFL, flags | os.O_NONBLOCK)
 ```
-以上代码完成了客户端调取的全部工能
+以上代码完成了客户端调取的全部功能
 
 ps:select.epoll 只在py2.6以上的版本存在
 
