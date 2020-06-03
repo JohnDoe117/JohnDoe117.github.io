@@ -79,8 +79,11 @@ io_loop.start()
             self._impl.register(fd, events | self.ERROR)
     ```
     看起来比较简单的逻辑，将描述符和对应处理方法相绑定
+
     self._impl.register
+
     实际调用的epoll添加事件的方法
+
     epoll.epoll_ctl(self._epoll_fd, self._EPOLL_CTL_ADD, fd, events)
 
 - io_loop.start()
@@ -152,8 +155,11 @@ io_loop.start()
     ```
 
     self._impl.poll(poll_timeout)获取当前读写事件
+
     实际调用
+
     epoll.epoll_wait(self._epoll_fd, int(timeout * 1000))
+
     后续就比较简单查找读写事件的对应方法然后执行
 
 ## 自己实现一个ioloop
@@ -256,9 +262,11 @@ class IOLoop(object):
         fcntl.fcntl(fd, fcntl.F_SETFL, flags | os.O_NONBLOCK)
 ```
 以上代码完成了客户端调取的全部工能
+
 ps:select.epoll 只在py2.6以上的版本存在
 
 测试客户端代码
+
 ``` python
 import socket
 
@@ -270,6 +278,7 @@ client.send(msg.encode("utf-8"))
 data = client.recv(1024)
 print("recv:>", data.decode())
 ```
+
 可以直接配置以上三个文件再本地进行测试更好的理解ioloop的用法
 
 
